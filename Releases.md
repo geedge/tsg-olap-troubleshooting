@@ -1,0 +1,431 @@
+# tsg-olap-troubleshooting
+
+## Release 24.08 (28 AUG 2024)
+
+###### Update
+
+- Session Records 增加client_ip_tags, server_ip_tags, server_fqdn_tags列
+    
+- Statistics Rule 基于动态Metric构建测试集
+
+## Release 24.07 (28 JUL 2024)
+
+###### New Features
+
+- Datasets Time_Floor 函数支持时间粒度获取函数 CHART_GRANULARITY, SAMPLE_GRANULARITY
+    
+
+###### Update
+
+- Druid Datasets 增加函数HDR_DESCRIBE,HDR_GET_PERCENTILES_DESCRIPTION使用
+    
+
+###### Delete
+
+- 删除Apache Druid ，Report and Metrics 接口
+
+## Release 24.06 (28 JUN 2024)
+
+###### New Features
+
+- 增加Traffic Spectrum 数据集
+    
+
+###### Update
+
+- Troubleshooting 增加Test Script
+    
+- Statistics Rule Metrics 增加Client Port，Server Port及Packet Length 数据集
+
+
+## Release 24.05 (28 MAY 2024)
+
+###### New Features
+
+- 增加Scehma datapath_telemetry_record
+    
+
+###### Update
+
+- Session Records 查询增加c2s_ttl,s2c_ttl
+
+
+## Release 24.04 (28 APR 2024)
+
+###### New Features
+
+- 增加DoS Protection Rule Metric 相关Datasets
+- 增加DoS Protection Policy Rule Hits
+    
+
+###### Update
+
+- 日志公共字段增加tunnel_id_list,client_country, client_super_administrative_area, client_administrative_area, client_sub_administrative_area,server_country, server_super_administrative_area, server_administrative_area, server_sub_administrative_area
+- QGW Query API 参数由execution_mode修改 execution_mode
+- DoS Threat Map 增加 attack volume接口
+- Statistics Rule Metric增加Client ASN和Server ASN Dataset
+- TopK 增加维度rank_by
+- TopK Metric 增加Top Client Countries，Top Server Countries
+    
+
+###### Delete
+
+- 删除Top Subscribers
+
+
+## Release 24.03 (28 MAR 2024)
+
+###### Update
+
+* Top-k metrics 去掉metric维度
+* Saved query scheduler 增加monitor 接口
+
+## Release 24.02 (29 FEB 2024)
+
+###### Update
+
+* Metric相关接口内层嵌套查询调整粒度为1s
+* 基础字段tunnels修改为encapsulation
+
+## Release 24.01 (31 JAN 2024)
+
+###### New Features
+
+* 依据OLAP API 组织接口
+* 接口进行重构，不再兼容23.10及之前版本
+
+## Release 23.10 (30 OCT 2023)
+
+###### Update
+* 会话日志增加毫米级时间戳字段common_start_timestamp_ms, common_end_timestamp_ms 
+* 会话日志增加操作系统指纹common_client_os_name,common_server_os_name
+
+## Release 23.09 (30 SEP 2023)
+
+###### Update
+* metrics 修改表名由statistics_object改为object_statistics
+* Flags统计增加Bidirectional标识
+* Closed Session Records 增加http_status_code, ssl_esni_flag, ssl_ech_flag
+* 删除Kafka Topics 目录
+
+## Release 23.08 (21 AUG 2023)
+
+###### New Features
+* Metrics增加Statistics Policy 相关接口
+* Metrics增加Statistics Object 相关接口
+* Metrics增加Statistics rule 命中计数接口
+
+###### Update
+* 会话日志查询，增加重命名字段common_out_link_id、common_in_link_id 
+
+## Release 23.07 (21 JUL 2023)
+###### Update
+* 修复Network Throughput Active Sessions计算错误，不除时间粒度
+
+## Release 23.06 (21 JUN 2023)
+###### Update
+* 优化Limit返回值
+
+## Release 23.05 (28 MAY 2023)
+###### New Features
+* 增加Service chaining统计接口
+* QGW增加嵌套子查询接口，用于验证高级搜素
+
+###### Update
+* Main Dashboard统计接口重构，更改统计源
+* Live Traffic Chart 接口重构，更改统计源
+* 原代理日志拆分为Intercept和Manipulation
+* 相关Metrics的Schema更改为重构后的数据源
+
+## Release 23.04 (28 APR 2023)
+###### New Features
+* 增加数据写入延迟接口Session Insert Latency Distribution
+* 增加数据写入Kafka延迟接口 Session Ingestion Latency Distribution
+
+###### Update
+* 重构 Security Policy Hits Metrics 统计
+* 重构 Traffic Shaping Metrics 统计
+
+## Release 23.03 (31 MAR 2023)
+
+###### New Features
+* 目录整体重构，重新梳理功能，便于Newman CLI运行
+* ClickHouse目录增加慢查询故障诊断语句
+* 参数与API接口统一改为英文，避免中文编码执行异常
+* 加密环境变量密码、token等敏感信息
+* 定义全局动态变量：时间范围、随机IP、随机域名等
+
+###### Update
+
+* Flags 添加C2S与S2C标志位标签
+
+
+## Release 23.02 (28 FEB 2023)
+
+###### New Features
+* 增加Traffic Shaping 相关统计接口
+
+###### Update
+* 会话日志增加列common_shaping_rule_ids
+* 会话与安全事件日志增加列common_server_domain
+* 会话与安全事件日志增加列common_flags_identify_info
+
+## Release 23.01 (31 JAN 2023)
+###### Update
+* 会话与安全事件日志增加列common_server_fqdn
+* 会话与安全事件日志增加列common_app_full_path
+
+## Release 22.12 (30 DEC 2022)
+###### New Features
+* 新增Dashboards-增加App推荐
+* 新增系统报告-会话日志Flags统计
+* 新增系统报告-会话日志Flags占比
+
+###### Update
+* 会话与安全事件日志增加common_flags列
+* 自定义IP映射-增加对ASN函数
+
+## Release 22.11 (30 NOV 2022)
+###### Update
+* 会话与安全事件日志增加ssl_ja3s_hash列
+
+## Release 22.10 (30 OCT 2022)
+###### New Features
+* 06其它-功能验证-Traffic Summary增加Throughput接口 
+###### Update
+* 更新原有查询，将VSYS ID作为默认查询条件
+
+## Release 22.09 (30 SEP 2022)
+
+###### Update
+* 会话与安全事件日志增加common_tunnel_endpoint_a_desc, common_tunnel_endpoint_b_desc,dtls_sni 列
+
+
+## Release 22.08 (31 AUG 2022)
+
+###### New Features
+* 其它-查询网关-Live Charts 总带宽流量校验
+* 增加检查数据流-SQL执行计划
+* 增加检查数据流-SQL查看表结构
+* 增加检查数据推荐-推荐IMSI到TEID关系
+* 增加检查数据推荐-推荐IMEI到TEID关系
+* 增加检查数据推荐-推荐Phone Number到TEID关系
+* 增加检查数据推荐-推荐apn到TEID关系
+* 增加检查数据推荐-实时查询任务-提交查询任务(实时统计)
+* 增加检查数据推荐-实时查询任务-获取任务结果(实时统计)
+* 增加检查数据推荐-知识库列表
+* 增加预处理检查-检测预处理延迟
+* 增加预处理检查-已关闭会话日志延迟分布
+
+
+
+## Release 22.07 (30 JUL 2022)
+
+###### New Features
+* 增加检查数据推荐-Top Server IP流量概况评估
+* 增加检查数据推荐-Top SNI 流量概况评估
+
+## Release 22.06 (30 JUE 2022)
+
+###### New Features
+
+* 检查数据流-增加存储配额一致性检查
+
+###### Update
+
+* 系统报告检查-增加与CM默认VSYSID=1参数
+
+## Release 22.05 (29 APR 2022)
+
+###### New Features
+
+###### Update
+* 检查日志-会话日志/安全事件日志增加RDP类型校验
+
+## Release 22.04 (29 APR 2022)
+
+###### New Features
+
+###### Update
+* 预处理检查-是否有数据验证，改为通过console后台打印日志
+* Dashboards Top部分功能增加device_group, data_center维度校验
+
+## Release 22.03 (21 MAR 2022)
+
+###### New Features
+* 增加数据预处理检查，为每类日志增加多个测试用例，区分功能或无数据问题
+
+###### Update
+* 其它-评估日志预处理，增加ETL处理时延和写入Kafka时延指标
+* 检查日志模块对会话，安全和代理事件日志基于具体字段查询
+
+###### Delete
+* 删除检查数据流，关于Topic的测试用例
+
+
+## Release 22.02 (8 MAR 2022)
+
+###### New Features
+
+*  检查数据流-元数据检查 增加schema评价文件事件日志
+
+## Release 22.01 (27 JAN 2022)
+
+###### New Features
+
+*   检查数据流-TopN计算 增加Application接口验证
+    
+
+###### Update
+
+*   重新梳理分类，删除无用接口
+*   重新排列分类，将系统自检放到首位
+
+## Release 21.12 (1 Dec 2021)
+###### New Features
+
+*   新增数据推荐查询-实时查询任务
+*   新增数据推荐查询-推荐Subscriber ID 到IP关系
+*   新增数据推荐查询-推荐APP活跃客户端IP
+*   新增数据推荐查询-推荐TopN Server IP
+*   新增数据推荐查询-推荐TopN SNI
+*   新增常用快捷功能-查询网关，增加优化查询测试集
+    *   Top 查询优化
+    *   Calcite 缓存查询
+    *   自定义时间函数补全功能
+
+## Release 21.11 (5 Nov 2021)
+###### New Features
+* 新增实时推荐SubscribeID与IP映射接口 
+###### Delete 
+* 删除AppID列表接口
+###### Update 
+* 修改报告查询接口(由查询mariadb方式变更为API接口)
+* 修改规范“数据推荐查询”所有接口的命名
+
+## Release 21.10 (28 OCT 2021)
+###### New Features
+* 新增HOS健康状态检测接口
+* 新增Druid任务健康状态检查接口
+###### Delete 
+* 删除原ClickHouse/Druid/ArangoDB 状态检查接口
+
+
+## Release 21.09 (23 SEP 2021)
+###### New Features
+* 新增DNS放大攻击Resolver接口
+###### Update 
+* 删除分布式调度任务，5分钟TOPN校验，交由FLink统计
+* 原始日志表名进行重命名，相关查询接口更新
+* 修正DNS分析的SQL数据集
+
+## Release 21.08 (15 AUG 2021)
+###### New Features
+* 新增“Dashboard查询-DoS Threat Map”功能列表，显示DoS检测地图接口
+* 新增“原始日志查询-DoS事件日志”，显示DoS攻击检测日志
+* 新增“原始日志查询-DoS事件日志-Summary”，显示DoS攻击趋势统计
+* 新增“原始日志查询-DoS事件日志-Destination IP Traffic Trend”，显示受害者IP历史流量趋势
+* 新增“基数统计-实体“流量分析
+###### Update 
+* 迁移“Dashboard查询”liveCharts接口，放到“Live Charts”目录中统一管理。
+* 对DNS分析，增加一些查询样例
+
+## Release 21.07 (5 JUL 2021)
+
+###### New Features
+
+* 增加”常用快捷功能-基数统计“，用于分析日志分布情况
+* 增加”常用快捷功能-DNS放大攻击“，查询特征数据集
+* 增加”通用检查-对象存储-获取某个文件“，用于文件获取验证
+
+
+###### Update 
+* 为所有接口增加Tests脚本，对接口进行批量验证测试
+* 修正部分接口查询异常
+
+
+## Release 21.06 (7 JUN 2021)
+
+###### New Features
+* Environments 增加环境变量domain、client_ip、server_ip、l7_protocol和PT1M_TIME
+* 常用快捷功能增加某域名下钻、某IP下钻、协议下钻和DNS分析功能
+
+###### Update 
+* 原始日志查询，基于Druid近1小时日志变化粒度从5分钟改为1分钟。包含通联、策略和代理日志。
+
+
+## Release 21.05 (6 MAY 2021)
+
+###### New Features
+* 新增“GTP-C日志”功能，辅助故障诊断
+* 新增“事务日志”功能，辅助故障诊断
+* 新增“活跃会话日志”功能，辅助故障诊断
+* 新增“07.常用快捷功能-评估写入日志量”，查看当前系统的吞吐
+
+
+###### Update 
+* 修改"01.通用检查-数据存储检查"，增加事务、活跃及GTP-C 检测
+
+
+## Release 21.04 (3 APR 2021)
+
+###### New Features
+* 增加“VoIP日志”功能，辅助故障诊断
+* 增加“元数据检查”分类目录
+* 增加“HOS对象存储”目录，用于定位对象存储
+
+
+###### Update 
+
+* 修改“SQL语法检查”为“SQL语法验证”，支持SQL语句的静态分析和数据库语义验证
+* 迁移功能项位置，方便问题定位
+
+###### Delete
+* 删除“系统检查-查询引擎SQL测试集[过时]”功能，由“故障诊断-sql性能测试”替代。
+
+
+## Release 21.03 (2 MAR 2021)
+
+###### New Features
+
+* 增加故障诊断-元数据功能，可分析日志字段是否与schema一致
+* 增加故障诊断-sql性能测试，可对查询引擎进行功能性验证和POC性能测试 
+
+###### Update 
+
+*  对查询引擎SQL测试集标记过时
+
+
+## Release 21.02 (1 FEB 2021)
+
+
+###### Update 
+
+* 改善内部测试集，应对新的功能修改
+
+
+
+
+
+
+## Release 20.11.rc3 (11 DEC 2020)
+
+###### New Features
+
+* 增加常用快捷功能- 安装证书独立客户端IP数据趋势
+* 增加常用快捷功能-访问速度最慢TOP20 域名
+* 增加常用快捷功能-报告预置Metrics
+* 增加原始日志查询-安全策略-动作命中计数
+* 增加原始日志查询-代理策略-动作命中计数
+* 增加原始日志查询-通联-流量计数(now)
+
+###### Update 
+
+* 改善Dashboard查询-基础统计-新建、活跃（计数）-now
+* 改善Dashboard查询-新建、活跃（趋势）
+* 目录增加编号，便于管理
+* 修改分布式调度任务-5分钟TOPN-hot表验证表名
+* 部分Action为post 改为 get，便于导出命令行
+
+[帮助文档]: https://docs.geedge.net/pages/viewpage.action?pageId=19896569
+
