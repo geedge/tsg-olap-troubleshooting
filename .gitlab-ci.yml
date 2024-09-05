@@ -1,0 +1,26 @@
+image: 192.168.40.153:8082/common/maven:3.8.1-openjdk-11-slim
+
+stages:
+  - build
+  - deploy
+
+
+variables:
+  VERSION: "$CI_COMMIT_TAG"
+
+build:
+  stage: build
+  script:
+    - echo "Building the project..."
+    - tar -czvf tsg-olap-troubleshooting-$VERSION.tar.gz bin/ config/ e2e-mockdata-generator/ README.md
+  only:
+    - tags
+
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Uploading to Nexus..."
+    - curl -v -u $NEXUS_USER:$NEXUS_PASSWORD --upload-file tsg-olap-troubleshooting-$VERSION.tar.gz "$NEXUS_URL/troubleshooting/tsg-olap-troubleshooting-$VERSION.tar.gz"
+  only:
+    - tags
