@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "8d632c51-8d7b-426a-ae7d-baaf5d41dca3",
-		"name": "tsg-olap-e2e-test-24.08",
+		"_postman_id": "15fc359a-af82-41a5-9dcc-f931fa7e534c",
+		"name": "tsg-olap-e2e-test-24.09",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "8105037"
 	},
@@ -1001,7 +1001,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174001",
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_policy_capture_file_bucket/123e4567-e89b-12d3-a456-426614174001",
 							"protocol": "http",
 							"host": [
 								"{{hos_ip}}"
@@ -1009,7 +1009,7 @@
 							"port": "{{hos_port}}",
 							"path": [
 								"hos",
-								"traffic_file_bucket",
+								"traffic_policy_capture_file_bucket",
 								"123e4567-e89b-12d3-a456-426614174001"
 							]
 						}
@@ -1017,7 +1017,7 @@
 					"response": []
 				},
 				{
-					"name": "http_request_body_test",
+					"name": "http_request_file_test",
 					"event": [
 						{
 							"listen": "test",
@@ -1062,7 +1062,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174002",
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_http_file_bucket/123e4567-e89b-12d3-a456-426614174002",
 							"protocol": "http",
 							"host": [
 								"{{hos_ip}}"
@@ -1070,7 +1070,7 @@
 							"port": "{{hos_port}}",
 							"path": [
 								"hos",
-								"traffic_file_bucket",
+								"traffic_http_file_bucket",
 								"123e4567-e89b-12d3-a456-426614174002"
 							]
 						}
@@ -1078,7 +1078,7 @@
 					"response": []
 				},
 				{
-					"name": "http_response_body_test",
+					"name": "http_response_file_test",
 					"event": [
 						{
 							"listen": "test",
@@ -1123,7 +1123,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174003",
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_http_file_bucket/123e4567-e89b-12d3-a456-426614174003",
 							"protocol": "http",
 							"host": [
 								"{{hos_ip}}"
@@ -1131,7 +1131,7 @@
 							"port": "{{hos_port}}",
 							"path": [
 								"hos",
-								"traffic_file_bucket",
+								"traffic_http_file_bucket",
 								"123e4567-e89b-12d3-a456-426614174003"
 							]
 						}
@@ -1184,7 +1184,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174004",
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_eml_file_bucket/123e4567-e89b-12d3-a456-426614174004",
 							"protocol": "http",
 							"host": [
 								"{{hos_ip}}"
@@ -1192,7 +1192,7 @@
 							"port": "{{hos_port}}",
 							"path": [
 								"hos",
-								"traffic_file_bucket",
+								"traffic_eml_file_bucket",
 								"123e4567-e89b-12d3-a456-426614174004"
 							]
 						}
@@ -1200,7 +1200,7 @@
 					"response": []
 				},
 				{
-					"name": "rtp_pcap_path_test",
+					"name": "rtp_pcap_file_test",
 					"event": [
 						{
 							"listen": "test",
@@ -1245,7 +1245,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket/123e4567-e89b-12d3-a456-426614174005",
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_rtp_file_bucket/123e4567-e89b-12d3-a456-426614174005",
 							"protocol": "http",
 							"host": [
 								"{{hos_ip}}"
@@ -1253,7 +1253,7 @@
 							"port": "{{hos_port}}",
 							"path": [
 								"hos",
-								"traffic_file_bucket",
+								"traffic_rtp_file_bucket",
 								"123e4567-e89b-12d3-a456-426614174005"
 							]
 						}
@@ -1398,7 +1398,7 @@
 			"name": "clear_test_data",
 			"item": [
 				{
-					"name": "delete_traffic_files_test",
+					"name": "delete_monitor_packet_capture_file",
 					"event": [
 						{
 							"listen": "test",
@@ -1437,7 +1437,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "<Delete>\n    <Quiet>true</Quiet>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174001</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174002</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174003</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174004</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174005</Key>\n    </Object>\n</Delete>",
+							"raw": "<Delete>\n    <Quiet>true</Quiet>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174001</Key>\n    </Object>\n</Delete>",
 							"options": {
 								"raw": {
 									"language": "xml"
@@ -1445,7 +1445,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_file_bucket?delete",
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_policy_capture_file_bucket?delete",
 							"protocol": "http",
 							"host": [
 								"{{hos_ip}}"
@@ -1453,7 +1453,211 @@
 							"port": "{{hos_port}}",
 							"path": [
 								"hos",
-								"traffic_file_bucket"
+								"traffic_policy_capture_file_bucket"
+							],
+							"query": [
+								{
+									"key": "delete",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_http_file",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{hos_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Delete>\n    <Quiet>true</Quiet>\n     <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174002</Key>\n    </Object>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174003</Key>\n    </Object>\n</Delete>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_http_file_bucket?delete",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_http_file_bucket"
+							],
+							"query": [
+								{
+									"key": "delete",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_mail_eml_file",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{hos_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Delete>\n    <Quiet>true</Quiet>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174004</Key>\n    </Object>\n</Delete>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_eml_file_bucket?delete",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_eml_file_bucket"
+							],
+							"query": [
+								{
+									"key": "delete",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_rtp_pcap_file",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"   pm.response.to.not.be.error;",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{hos_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Delete>\n    <Quiet>true</Quiet>\n    <Object>\n        <Key>123e4567-e89b-12d3-a456-426614174005</Key>\n    </Object>\n</Delete>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{hos_ip}}:{{hos_port}}/hos/traffic_rtp_file_bucket?delete",
+							"protocol": "http",
+							"host": [
+								"{{hos_ip}}"
+							],
+							"port": "{{hos_port}}",
+							"path": [
+								"hos",
+								"traffic_rtp_file_bucket"
 							],
 							"query": [
 								{
@@ -1509,7 +1713,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/traffic_file_bucket?file_names=123e4567-e89b-12d3-a456-426614174007",
+							"raw": "http://{{qgw_ip}}:{{qgw_port}}/v1/hos/troubleshooting_file_bucket?file_names=123e4567-e89b-12d3-a456-426614174007",
 							"protocol": "http",
 							"host": [
 								"{{qgw_ip}}"
@@ -1518,7 +1722,7 @@
 							"path": [
 								"v1",
 								"hos",
-								"traffic_file_bucket"
+								"troubleshooting_file_bucket"
 							],
 							"query": [
 								{
