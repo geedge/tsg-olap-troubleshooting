@@ -19,6 +19,8 @@ deploy:
   stage: deploy
   script:
     - echo "Uploading to Nexus..."
+    - echo "$NEXUS_USER:$NEXUS_PASSWORD"
+    - echo "$NEXUS_URL"
     - curl -v -u $NEXUS_USER:$NEXUS_PASSWORD --upload-file tsg-olap-troubleshooting-$VERSION.tar.gz "$NEXUS_URL/troubleshooting/tsg-olap-troubleshooting-$VERSION.tar.gz"
   only:
     - tags
