@@ -85,15 +85,23 @@ generate_files() {
   cd $E2E_MOCKDATA_GENERATOR_PATH || { echo "Error: Cannot change directory to $E2E_MOCKDATA_GENERATOR_PATH"; exit 1; }
   # 123e4567-e89b-12d3-a456-426614174006 troubleshooting_pcapng
   # 123e4567-e89b-12d3-a456-426614174007 datapath_telemetry_pcapng
-  declare -A FILES=(
+  declare -A FILE_TYPES=(
     ["123e4567-e89b-12d3-a456-426614174001"]="traffic_pcapng"
     ["123e4567-e89b-12d3-a456-426614174002"]="html"
     ["123e4567-e89b-12d3-a456-426614174003"]="html"
     ["123e4567-e89b-12d3-a456-426614174004"]="eml"
     ["123e4567-e89b-12d3-a456-426614174005"]="traffic_pcapng"
   )
-    for uuid in "${!FILES[@]}"; do
-      java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --bootstrap_server $bootstrap_server --topic TRAFFIC-FILE-STREAM-RECORD -n $uuid --file_type ${FILES[$uuid]}
+ declare -A FILE_TOPICS=(
+    ["123e4567-e89b-12d3-a456-426614174001"]="TRAFFIC-POLICY-CAPTURE-FILE-STREAM-RECORD"
+    ["123e4567-e89b-12d3-a456-426614174002"]="TRAFFIC-HTTP-FILE-STREAM-RECORD"
+    ["123e4567-e89b-12d3-a456-426614174003"]="TRAFFIC-HTTP-FILE-STREAM-RECORD"
+    ["123e4567-e89b-12d3-a456-426614174004"]="TRAFFIC-EML-FILE-STREAM-RECORD"
+    ["123e4567-e89b-12d3-a456-426614174005"]="TRAFFIC-RTP-FILE-STREAM-RECORD"
+  )
+
+    for uuid in "${!FILE_TYPES[@]}"; do
+      java -cp e2e-mockdata-generator.jar com.geedgenetworks.FileChunkGenerator --bootstrap_server $bootstrap_server --topic ${FILE_TOPICS[$uuid]} -n $uuid --file_type ${FILE_TYPES[$uuid]}
     done
 }
 
