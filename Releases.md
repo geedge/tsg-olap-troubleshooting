@@ -1,5 +1,18 @@
 # tsg-olap-troubleshooting
 
+## Release 24.10 (28 OCT 2024)
+
+###### Update
+
+- Session Records 增加ssl_ja4_fingerprint, ssl_ja4s_fingerprint列
+
+- 日志字段xx_id_list统一改为xx_uuid_list
+
+- Metric 字段xx_id统一改为xx_uuid
+
+- QGW URI 部分接口修改为复数，path由下划线修改为横线
+
+
 ## Release 24.08 (28 AUG 2024)
 
 ###### Update
